@@ -2,7 +2,6 @@ from django.contrib import admin
 from django.urls import include, path
 
 from . import views
-from django.conf.urls import handler404, handler500
 
 handler404 = 'oc_lettings_site.views.error_404'
 handler500 = 'oc_lettings_site.views.error_500'
