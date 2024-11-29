@@ -1,3 +1,8 @@
 **/__pycache__
 *.pyc
 venv
+myenv
+.env
+.coverage
+oc_lettings_site/migrations/0002_auto_20241129_1115.py
+migrations
