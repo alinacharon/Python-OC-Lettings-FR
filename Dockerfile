@@ -9,7 +9,6 @@ COPY . .
 
 RUN python manage.py collectstatic --noinput
 
-RUN pip install whitenoise
 
 EXPOSE 8000
 
