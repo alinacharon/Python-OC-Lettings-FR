@@ -54,11 +54,12 @@ jobs:
       
     - name: Build Docker image
       run: |
-        docker build -t myusername/myapp:${{ github.sha }} .
+       docker build -t alinacharon/lettings:${{ github.sha }} .
     
     - name: Push Docker image to Docker Hub
       run: |
-        docker push myusername/myapp:${{ github.sha }}
+       docker push alinacharon/lettings:${{ github.sha }}
+
 
         
   deploy-to-render:
