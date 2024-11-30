@@ -54,11 +54,11 @@ jobs:
       
     - name: Build Docker image
       run: |
-       docker build -t alinacharon/lettings:${{ github.sha }} .
+       docker build -t ${{ secrets.DOCKER_IMAGE_NAME }}:${{ github.sha }} .
     
     - name: Push Docker image to Docker Hub
       run: |
-       docker push alinacharon/lettings:${{ github.sha }}
+       docker push ${{ secrets.DOCKER_IMAGE_NAME }}:${{ github.sha }}
 
 
         
@@ -73,14 +73,16 @@ jobs:
     - name: Render Deploy
       env:
         RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+        RENDER_SERVICE_ID: ${{ secrets.RENDER_SERVICE_ID }}
+        DOCKER_IMAGE_NAME: ${{ secrets.DOCKER_IMAGE_NAME }}
       run: |
         curl -X POST \
           -H "Authorization: Bearer $RENDER_API_KEY" \
           -d "{
-            \"serviceId\": "srv-ct4skd0gph6c73c94ieg",
+            \"serviceId\": \"$RENDER_SERVICE_ID\",,
             \"docker\": {
-              \"image\": \"alinacharon/lettings:${{ github.sha }}\"
+              \"image\": \"$DOCKER_IMAGE_NAME:${{ github.sha }}\"
             }
           }" \
-          
+
   
