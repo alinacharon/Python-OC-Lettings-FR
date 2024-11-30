@@ -89,3 +89,4 @@ jobs:
               \"image\": \"$DOCKER_IMAGE_NAME:${{ github.sha }}\"
             }
           }"
+          https://api.render.com/v1/services/deploy
