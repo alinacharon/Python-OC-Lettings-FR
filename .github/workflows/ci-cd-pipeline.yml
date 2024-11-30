@@ -77,10 +77,10 @@ jobs:
         curl -X POST \
           -H "Authorization: Bearer $RENDER_API_KEY" \
           -d "{
-            \"serviceId\": \"your-render-service-id\",
+            \"serviceId\": "srv-ct4skd0gph6c73c94ieg",
             \"docker\": {
-              \"image\": \"myusername/myapp:${{ github.sha }}\"
+              \"image\": \"alinacharon/lettings:${{ github.sha }}\"
             }
           }" \
-          https://api.render.com/v1/services/deploy
+          
   
