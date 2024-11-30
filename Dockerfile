@@ -1,5 +1,8 @@
 FROM python:3.8-slim
 
+
+ARG SENTRY_DSN
+
 ENV SENTRY_DSN=${SENTRY_DSN}
 
 WORKDIR /app
