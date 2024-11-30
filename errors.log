@@ -1,0 +1,76 @@
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alinacharon/Desktop/code/Back-end/Projects_OC/Project 13/code/Python-OC-Lettings-FR/oc_lettings_site/views.py", line 16, in index
+    return render(request, 'index.html')
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/template/base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/template/base.py", line 903, in render_annotated
+    return self.render(context)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/template/base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/template/base.py", line 903, in render_annotated
+    return self.render(context)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/templatetags/static.py", line 106, in render
+    url = self.url(context)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/templatetags/static.py", line 103, in url
+    return self.handle_simple(path)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/templatetags/static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/contrib/staticfiles/storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/contrib/staticfiles/storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/contrib/staticfiles/storage.py", line 423, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for 'css/styles.css'
+"GET / HTTP/1.1" 500 209
+Internal Server Error: /lettings/lettings/9999/
+Traceback (most recent call last):
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alinacharon/Desktop/code/Back-end/Projects_OC/Project 13/code/Python-OC-Lettings-FR/lettings/views.py", line 43, in letting
+    letting = Letting.objects.get(id=letting_id)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/db/models/query.py", line 417, in get
+    self.model._meta.object_name
+lettings.models.Letting.DoesNotExist: Letting matching query does not exist.
+Internal Server Error: /profiles/profiles/nonexistent/
+Traceback (most recent call last):
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alinacharon/Desktop/code/Back-end/Projects_OC/Project 13/code/Python-OC-Lettings-FR/profiles/views.py", line 43, in profile
+    profile = Profile.objects.get(user__username=username)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/alinacharon/.pyenv/versions/3.6.15/envs/myenv/lib/python3.6/site-packages/django/db/models/query.py", line 417, in get
+    self.model._meta.object_name
+profiles.models.Profile.DoesNotExist: Profile matching query does not exist.
