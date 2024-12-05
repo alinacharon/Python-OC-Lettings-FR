@@ -91,8 +91,6 @@ jobs:
         render_api_key: ${{ secrets.RENDER_API_KEY }}
         render_service_id: ${{ secrets.RENDER_SERVICE_ID }}
         docker_image_name: ${{ secrets.DOCKER_IMAGE_NAME }}
-        sentry_dsn: ${{ secrets.SENTRY_DSN }}
-        secret_key_django: ${{ secrets.SECRET_KEY_DJANGO }}
       run: |
         curl -X POST \
           -H "Authorization: Bearer $RENDER_API_KEY" \
