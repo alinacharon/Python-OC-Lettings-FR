@@ -115,4 +115,4 @@ class TestLettingsURLs:
             )
         )
         path = reverse('letting', kwargs={'letting_id': letting.id})
-        assert path == f'/lettings/lettings/{letting.id}/'
+        assert path == f'/lettings/{letting.id}/'
