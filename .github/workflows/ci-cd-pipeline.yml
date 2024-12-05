@@ -21,6 +21,14 @@ jobs:
       with:
         python-version: '3.9'
 
+    - name: cache pip
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+
     - name: install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -41,7 +49,7 @@ jobs:
         pytest --cov=src --cov-report=term-missing
 
   build-and-push:
-    if: github.ref == 'refs/heads/master' # запуск только для ветки master
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     needs: lint-and-test
   
@@ -51,7 +59,7 @@ jobs:
 
     - name: set up docker buildx
       uses: docker/setup-buildx-action@v2
-      
+
     - name: log in to docker hub
       env:
         sentry_dsn: ${{ secrets.SENTRY_DSN }}
@@ -60,7 +68,7 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-      
+
     - name: build docker image
       run: |
         docker build \
@@ -71,12 +79,12 @@ jobs:
     - name: push docker image to docker hub
       run: |
         docker push ${{ secrets.DOCKER_IMAGE_NAME }}:${{ github.sha }}
-        
+
   deploy-to-render:
-    if: github.ref == 'refs/heads/master' # запуск только для ветки master
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     needs: build-and-push
-    
+
     steps:
     - name: check out code
       uses: actions/checkout@v3
