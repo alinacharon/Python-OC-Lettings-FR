@@ -6,10 +6,13 @@
 Welcome to OC-Lettings's documentation!
 =======================================
 
-
 .. toctree::
    :maxdepth: 2
    :caption: Table of Contents:
 
-.. include:: introduction.rst
-.. include:: installation.rst
+   introduction.rst
+   installation.rst
+   quick_start.rst
+   technologies.rst
+   database_structure.rst
+   deployment.rst

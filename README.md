@@ -75,3 +75,33 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 
 - Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1` 
 - Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
+
+## Déploiement
+
+### Vue d'ensemble
+
+Le déploiement de l'application OC-Lettings est géré via la plateforme Render. La pipeline CI/CD est configurée pour automatiser le processus de build et de déploiement chaque fois que des modifications sont poussées vers le repository ou qu'un déclencheur manuel est initié.
+
+### Prérequis
+
+Pour garantir un déploiement réussi, les configurations suivantes sont requises :
+
+- Un compte Render avec accès à créer et gérer des services web.
+- Docker doit être installé et configuré sur votre machine locale pour construire des images.
+- Les variables d'environnement telles que `SENTRY_DSN` et `SECRET_KEY_DJANGO` doivent être définies dans le tableau de bord Render.
+
+### Étapes de déploiement
+
+1. **Se connecter à Render** : Assurez-vous que votre compte GitHub est lié à votre compte Render.
+2. **Créer un nouveau service web** : Si ce n'est déjà fait, configurez un nouveau service web dans le tableau de bord Render.
+3. **Configurer les paramètres de déploiement** :
+   - Définir la commande de build sur `docker build -t alinacharon/lettings .`
+   - Définir la commande de démarrage sur `docker run alinacharon/lettings`.
+4. **Définir les variables d'environnement** : Dans le tableau de bord Render, naviguez vers la section "Environment" et ajoutez les variables d'environnement nécessaires :
+   - `SENTRY_DSN`
+   - `SECRET_KEY_DJANGO`
+5. **Déclencher le déploiement** :
+   - Si vous poussez des modifications vers le repository GitHub, Render reconstruira automatiquement et redéploiera l'application.
+   - Alternativement, vous pouvez déclencher un déploiement manuel via le tableau de bord Render en sélectionnant votre service et en cliquant sur "Deploy".
+
+Le site est actuellement accessible à l'adresse : [https://python-oc-lettings-fr-o8k3.onrender.com](https://python-oc-lettings-fr-o8k3.onrender.com).
