@@ -34,11 +34,11 @@ To install OC-Lettings, follow the steps below:
 
 6. **Deployment on Render**:
 
-   OC-Lettings is deployed on the Render platform for online access. If you need to update the deployment, follow these steps: \n
-   1. **Render Account**: Ensure you have an account on Render.\n
-   2. **Update Service**: In your Render dashboard, navigate to your existing web service.\n
-   3. **Environment Variables**: Verify that any necessary environment variables, such as `SENTRY_DSN`, are correctly set in the Render dashboard under the "Environment" section.\n
-   4. **Trigger Redeploy**: If you push changes to your GitHub repository, Render will not automatically rebuild and redeploy your application. You should do it mannually.\n
+   OC-Lettings is deployed on the Render platform for online access. If you need to update the deployment, follow these steps: 
+   1. **Render Account**: Ensure you have an account on Render.
+   2. **Update Service**: In your Render dashboard, navigate to your existing web service.
+   3. **Environment Variables**: Verify that any necessary environment variables, such as `SENTRY_DSN`, are correctly set in the Render dashboard under the "Environment" section.
+   4. **Trigger Redeploy**: If you push changes to your GitHub repository, Render will not automatically rebuild and redeploy your application. You should do it mannually.
 
 7. **CI Pipeline with GitHub Actions**:
 
