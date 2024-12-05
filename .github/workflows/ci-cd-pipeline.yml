@@ -30,6 +30,7 @@ jobs:
     - name: Set up environment for testing
       run: |
           echo "SENTRY_DSN=${{ secrets.SENTRY_DSN }}" >> $GITHUB_ENV
+          echo "SECRET_KEY_DJANGO=${{ secrets.SECRET_KEY_DJANGO }}" >> $GITHUB_ENV
 
     - name: Run Linter (flake8)
       run: |
@@ -82,6 +83,7 @@ jobs:
         RENDER_SERVICE_ID: ${{ secrets.RENDER_SERVICE_ID }}
         DOCKER_IMAGE_NAME: ${{ secrets.DOCKER_IMAGE_NAME }}
         SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+        SECRET_KEY_DJANGO: ${{ secrets.SECRET_KEY_DJANGO }}
       run: |
         curl -X POST \
           -H "Authorization: Bearer $RENDER_API_KEY" \
@@ -89,6 +91,9 @@ jobs:
             \"serviceId\": \"$RENDER_SERVICE_ID\",
             \"docker\": {
               \"image\": \"$DOCKER_IMAGE_NAME:${{ github.sha }}\"
-            }
+            },
+            \"envvars\": [
+              {\"key\": \"SECRET_KEY_DJANGO\", \"value\": \"$SECRET_KEY_DJANGO\"}
+            ]
           }" \
           https://api.render.com/v1/services/deploy
