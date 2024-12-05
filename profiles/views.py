@@ -44,8 +44,8 @@ def profile(request, username):
     """
     try:
         profile = Profile.objects.get(user__username=username)
-    except Profile.DoesNotExist as e:
-        sentry_sdk.capture_exception(e)
+    except Profile.DoesNotExist:
+        sentry_sdk.capture_message(f"Profile does not exist for username: {username}")
         raise Http404("Profile not found")
 
     context = {'profile': profile}
