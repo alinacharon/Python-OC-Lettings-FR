@@ -1,0 +1,13 @@
+[coverage:run]
+branch = True
+source =
+    lettings
+    profiles
+    oc_lettings_site
+omit =
+    */migrations/*
+    */tests.py
+    */apps.py
+    */wsgi.py
+    */asgi.py
+    */__init__.py
