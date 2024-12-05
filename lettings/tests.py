@@ -92,8 +92,8 @@ class TestLettingsViews:
         assert response.context['address'] == self.address1
 
     def test_letting_view_with_nonexistent_letting(self):
-        with pytest.raises(Exception):
-            self.client.get(reverse('letting', kwargs={'letting_id': 9999}))
+        response = self.client.get(reverse('letting', kwargs={'letting_id': 9999}))
+        assert response.status_code == 404
 
 
 @pytest.mark.django_db

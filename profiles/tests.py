@@ -56,5 +56,5 @@ class TestProfileViews:
         assert template.template.name.endswith('profiles/profile.html')
 
     def test_profile_view_with_nonexistent_user(self):
-        with pytest.raises(Exception):
-            self.client.get(reverse('profile', kwargs={'username': 'nonexistent'}))
+        response = self.client.get(reverse('profile', kwargs={'username': 'nonexistent'}))
+        assert response.status_code == 404

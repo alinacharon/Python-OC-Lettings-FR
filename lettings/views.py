@@ -44,9 +44,8 @@ def letting(request, letting_id):
     """
     try:
         letting = Letting.objects.get(id=letting_id)
-    except Letting.DoesNotExist:
-        sentry_sdk.capture_exception(
-            f"Letting matching query does not exist for letting_id: {letting_id}")
+    except Letting.DoesNotExist as e:
+        sentry_sdk.capture_exception(e)
 
         raise Http404("Letting not found")
 
