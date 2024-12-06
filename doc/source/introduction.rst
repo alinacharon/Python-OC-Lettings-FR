@@ -3,7 +3,7 @@ Introduction
 
 OC-Lettings is a property management application designed to simplify property management and enhance efficiency for property owners and managers. The application provides tools for listing properties, managing tenant information, and facilitating communication between landlords and tenants.
 
-### Technologies and Programming Languages
+**Technologies and Programming Languages**
 
 OC-Lettings is built using the following technologies:
 - **Python**: The primary programming language used for backend development.

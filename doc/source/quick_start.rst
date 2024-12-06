@@ -1,7 +1,7 @@
 Quick Start Guide
 =================
 
-To quickly get started with OC-Lettings, follow these steps:
+**To quickly get started with OC-Lettings, follow these steps:**
 
 1. **Clone the repository**:
    ```bash

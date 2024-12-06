@@ -3,7 +3,7 @@ Deployment
 
 The deployment of the OC-Lettings application is managed through the Render platform. The CI/CD pipeline is configured to automate the build and deployment process whenever changes are pushed to the repository or a manual trigger is initiated.
 
-### Deployment Steps
+**Deployment Steps**
 
 1. **Connect to Render**: Ensure your GitHub account is linked to your Render account.
 2. **Create a New Web Service**: If not already created, set up a new web service in the Render dashboard.

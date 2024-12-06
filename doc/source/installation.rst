@@ -32,11 +32,11 @@ To install OC-Lettings, follow the steps below:
    python manage.py runserver
    ```
 
-### Quick Start Guide
+**Quick Start Guide**
 
 After setting up the project, you can access the application by navigating to `http://localhost:8000` in your web browser. You can log in using the admin credentials provided in the documentation.
 
-### Deployment and Application Management
+**Deployment and Application Management**
 
 OC-Lettings is deployed on the Render platform for online access. If you need to update the deployment, follow these steps: 
 1. **Render Account**: Ensure you have an account on Render.
