@@ -1,4 +1,4 @@
-Lettings and Profiles Application User Guide
+User Guide
 ============================================
 
 ## Overview
