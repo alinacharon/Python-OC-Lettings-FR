@@ -1,4 +1,5 @@
-# Lettings and Profiles Application User Guide
+Lettings and Profiles Application User Guide
+============================================
 
 ## Overview
 The application is a Django-based web platform for managing property lettings and user profiles. This guide provides detailed information on using the application's features.
