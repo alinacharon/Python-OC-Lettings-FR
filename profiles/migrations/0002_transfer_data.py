@@ -12,6 +12,12 @@ def copy_profiles_data(apps, schema_editor):
         )
 
 
+def reverse_copy_profiles_data(apps, schema_editor):
+    NewProfile = apps.get_model('profiles', 'Profile')
+    
+    NewProfile.objects.all().delete()
+
+
 class Migration(migrations.Migration):
 
     dependencies = [
@@ -20,5 +26,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunPython(copy_profiles_data),
+        migrations.RunPython(copy_profiles_data, reverse_copy_profiles_data),
     ]
