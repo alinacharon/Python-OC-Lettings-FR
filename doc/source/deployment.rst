@@ -17,4 +17,4 @@ The deployment of the OC-Lettings application is managed through the Render plat
    - If you push changes to the GitHub repository, Render will automatically rebuild and redeploy the application.
    - Alternatively, you can manually trigger a deployment through the Render dashboard by selecting your service and clicking on "Deploy".
 
-The site is currently accessible at: [https://python-oc-lettings-fr-o8k3.onrender.com](https://python-oc-lettings-fr-o8k3.onrender.com).
+The site is currently accessible at:(https://python-oc-lettings-fr-o8k3.onrender.com).

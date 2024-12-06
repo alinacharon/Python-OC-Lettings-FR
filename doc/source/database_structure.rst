@@ -3,33 +3,77 @@ Database Structure and Data Models
 
 The OC-Lettings application uses a SQLite database with the following key models:
 
-### Address Model
 
-The `Address` model represents the address of a property and includes the following fields:
-- **number**: A positive integer representing the street number (max value: 9999).
-- **street**: A string representing the street name (max length: 64 characters).
-- **city**: A string representing the city name (max length: 64 characters).
-- **state**: A string representing the state (2 characters, validated for length).
-- **zip_code**: A positive integer representing the postal code (max value: 99999).
-- **country_iso_code**: A string representing the ISO code of the country (3 characters, validated for length).
+### 1. Address Model
+**Model Name:** `Address`
+**Database Table:** `adresses`
 
-### Letting Model
+#### Fields
+| Field Name | Type | Constraints | Description |
+|-----------|------|-------------|-------------|
+| `number` | Positive Integer | Max Value: 9999 | Street number |
+| `street` | Character | Max Length: 64 | Street name |
+| `city` | Character | Max Length: 64 | City name |
+| `state` | Character | Length: 2 | State abbreviation |
+| `zip_code` | Positive Integer | Max Value: 99999 | Postal code |
+| `country_iso_code` | Character | Length: 3 | Country ISO code |
 
-The `Letting` model represents a property listing and includes the following fields:
-- **title**: A string representing the title of the property (max length: 256 characters).
-- **address**: A one-to-one relationship with the `Address` model, linking each property to its address.
+#### Validation Rules
+- Street number must be a positive integer ≤ 9999
+- State must be exactly 2 characters long
+- Country code must be exactly 3 characters long
 
-### Profile Model
+#### String Representation
+Returns: `"{number} {street}"`
 
-The `Profile` model stores additional information about users and includes the following fields:
-- **user**: A one-to-one relationship with the Django `User` model, linking each profile to a specific user.
-- **favorite_city**: A string representing the user's favorite city (max length: 64 characters, can be blank).
+### 2. Letting Model
+**Model Name:** `Letting`
 
-### Database Schema
+#### Fields
+| Field Name | Type | Constraints | Description |
+|-----------|------|-------------|-------------|
+| `title` | Character | Max Length: 256 | Title of the letting |
+| `address` | One-to-One Relationship | Cascading Delete | Unique address associated with the letting |
 
-The database schema includes the following tables:
-- **addresses**: Stores address information for properties.
-- **lettings**: Stores property details, including titles and associated addresses.
-- **profiles**: Stores user profiles, including favorite cities.
+#### Relationships
+- **Address Relationship:** One-to-One with `Address` model
+- When the associated `Address` is deleted, the `Letting` is also deleted (CASCADE)
 
-This structure allows for efficient data management and retrieval, ensuring a smooth user experience.
+#### String Representation
+Returns: `"{title}"`
+
+### 3. Profile Model
+**Model Name:** `Profile`
+
+#### Fields
+| Field Name | Type | Constraints | Description |
+|-----------|------|-------------|-------------|
+| `user` | One-to-One Relationship | Cascading Delete | Associated Django User |
+| `favorite_city` | Character | Optional, Max Length: 64 | User's favorite city |
+
+#### Relationships
+- **User Relationship:** One-to-One with Django's built-in `User` model
+- When the associated `User` is deleted, the `Profile` is also deleted (CASCADE)
+
+#### String Representation
+Returns: `"{username}"`
+
+## Model Relationships Diagram
+
+```
+User (Django Auth) ---(1:1)--- Profile
+             |
+             |
+             v
+           Address ---(1:1)--- Letting
+```
+
+## Key Design Considerations
+1. Use of One-to-One relationships for User and Letting models
+2. Strict validation on address fields
+3. Cascading delete to maintain referential integrity
+
+## Recommended Database Practices
+- Ensure unique constraints are properly implemented
+- Validate data at both model and form levels
+- Use database migrations for schema changes
