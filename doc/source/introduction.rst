@@ -11,7 +11,7 @@ OC-Lettings is built using the following technologies:
 - **SQLite**: A lightweight database used for development and testing.
 - **Docker**: Used for containerization and deployment of the application.
 
-### Database Structure and Data Models
+**Database Structure and Data Models**
 
 The application uses a SQLite database with the following key models:
 - **User**: Represents the users of the application, including property owners and tenants.
