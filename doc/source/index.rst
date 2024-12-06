@@ -13,6 +13,7 @@ Welcome to OC-Lettings's documentation!
    introduction.rst
    installation.rst
    quick_start.rst
+   user_guide.rst
    technologies.rst
    database_structure.rst
    deployment.rst
