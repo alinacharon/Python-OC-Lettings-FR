@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Introduction &#8212; OC-Lettings initial documentation</title>
+    <title>Database Structure and Data Models &#8212; OC-Lettings initial documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -17,8 +17,8 @@
     <script src="_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Installation" href="installation.html" />
-    <link rel="prev" title="Welcome to OC-Lettings’s documentation!" href="index.html" />
+    <link rel="next" title="Deployment" href="deployment.html" />
+    <link rel="prev" title="Technologies and Programming Languages" href="technologies.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -35,20 +35,30 @@
 
           <div class="body" role="main">
             
-  <section id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h1>
-<p>OC-Lettings is a property management application designed to simplify property management and enhance efficiency for property owners and managers. The application provides tools for listing properties, managing tenant information, and facilitating communication between landlords and tenants.</p>
-<p><strong>Technologies and Programming Languages</strong></p>
-<p>OC-Lettings is built using the following technologies:
-- <strong>Python</strong>: The primary programming language used for backend development.
-- <strong>Django</strong>: A high-level Python web framework that encourages rapid development and clean, pragmatic design.
-- <strong>SQLite</strong>: A lightweight database used for development and testing.
-- <strong>Docker</strong>: Used for containerization and deployment of the application.</p>
-<p><strong>Database Structure and Data Models</strong></p>
-<p>The application uses a SQLite database with the following key models:
-- <strong>User</strong>: Represents the users of the application, including property owners and tenants.
-- <strong>Property</strong>: Contains details about the properties being managed, such as location, price, and availability.
-- <strong>Profile</strong>: Stores additional information about users, including their favorite cities and other preferences.</p>
+  <section id="database-structure-and-data-models">
+<h1>Database Structure and Data Models<a class="headerlink" href="#database-structure-and-data-models" title="Permalink to this heading">¶</a></h1>
+<p>The OC-Lettings application uses a SQLite database with the following key models:</p>
+<p><strong>Address Model</strong></p>
+<p>The <cite>Address</cite> model represents the address of a property and includes the following fields:
+- <strong>number</strong>: A positive integer representing the street number (max value: 9999).
+- <strong>street</strong>: A string representing the street name (max length: 64 characters).
+- <strong>city</strong>: A string representing the city name (max length: 64 characters).
+- <strong>state</strong>: A string representing the state (2 characters, validated for length).
+- <strong>zip_code</strong>: A positive integer representing the postal code (max value: 99999).
+- <strong>country_iso_code</strong>: A string representing the ISO code of the country (3 characters, validated for length).</p>
+<p><strong>Letting Model</strong></p>
+<p>The <cite>Letting</cite> model represents a property listing and includes the following fields:
+- <strong>title</strong>: A string representing the title of the property (max length: 256 characters).
+- <strong>address</strong>: A one-to-one relationship with the <cite>Address</cite> model, linking each property to its address.</p>
+<p><strong>Profile Model</strong></p>
+<p>The <cite>Profile</cite> model stores additional information about users and includes the following fields:
+- <strong>user</strong>: A one-to-one relationship with the Django <cite>User</cite> model, linking each profile to a specific user.
+- <strong>favorite_city</strong>: A string representing the user’s favorite city (max length: 64 characters, can be blank).</p>
+<p><strong>Database Schema</strong></p>
+<p>The database schema includes the following tables:
+- <strong>addresses</strong>: Stores address information for properties.
+- <strong>lettings</strong>: Stores property details, including titles and associated addresses.
+- <strong>profiles</strong>: Stores user profiles, including favorite cities.</p>
 <p>This structure allows for efficient data management and retrieval, ensuring a smooth user experience.</p>
 </section>
 
@@ -71,12 +81,12 @@
 <h3>Navigation</h3>
 <p class="caption" role="heading"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quick_start.html">Quick Start Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="technologies.html">Technologies and Programming Languages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="database_structure.html">Database Structure and Data Models</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Database Structure and Data Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment</a></li>
 </ul>
 
@@ -84,8 +94,8 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="index.html" title="previous chapter">Welcome to OC-Lettings’s documentation!</a></li>
-      <li>Next: <a href="installation.html" title="next chapter">Installation</a></li>
+      <li>Previous: <a href="technologies.html" title="previous chapter">Technologies and Programming Languages</a></li>
+      <li>Next: <a href="deployment.html" title="next chapter">Deployment</a></li>
   </ul></li>
 </ul>
 </div>
@@ -119,7 +129,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
       |
-      <a href="_sources/introduction.rst.txt"
+      <a href="_sources/database_structure.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

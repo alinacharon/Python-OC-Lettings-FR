@@ -32,16 +32,16 @@ To install OC-Lettings, follow the steps below:
    python manage.py runserver
    ```
 
-6. **Deployment on Render**:
+**Quick Start Guide**
 
-   OC-Lettings is deployed on the Render platform for online access. If you need to update the deployment, follow these steps:
-   1. **Render Account**: Ensure you have an account on Render.
-   2. **Update Service**: In your Render dashboard, navigate to your existing web service.
-   3. **Environment Variables**: Verify that any necessary environment variables, such as `SENTRY_DSN`, are correctly set in the Render dashboard under the "Environment" section.
-   4. **Trigger Redeploy**: If you push changes to your GitHub repository, Render will not automatically rebuild and redeploy your application. You should do it mannually.
+After setting up the project, you can access the application by navigating to `http://localhost:8000` in your web browser. You can log in using the admin credentials provided in the documentation.
 
-7. **CI Pipeline with GitHub Actions**:
+**Deployment and Application Management**
 
-   A CI Pipeline is set up using GitHub Actions. You can find the configuration in the `.github/workflows/ci.yml` file. This pipeline includes steps for linting, testing, building, and deploying the application.
+OC-Lettings is deployed on the Render platform for online access. If you need to update the deployment, follow these steps: 
+1. **Render Account**: Ensure you have an account on Render.
+2. **Update Service**: In your Render dashboard, navigate to your existing web service.
+3. **Environment Variables**: Verify that any necessary environment variables, such as `SENTRY_DSN`, are correctly set in the Render dashboard under the "Environment" section.
+4. **Trigger Redeploy**: If you push changes to your GitHub repository, Render will not automatically rebuild and redeploy your application. You should do it manually.
 
-The site is currently accessible at: (https://python-oc-lettings-fr-o8k3.onrender.com).
+The site is currently accessible at: [https://python-oc-lettings-fr-o8k3.onrender.com](https://python-oc-lettings-fr-o8k3.onrender.com).

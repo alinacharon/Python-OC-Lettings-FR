@@ -17,6 +17,7 @@
     <script src="_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction" href="introduction.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -36,54 +37,17 @@
   <section id="welcome-to-oc-lettings-s-documentation">
 <h1>Welcome to OC-Lettings’s documentation!<a class="headerlink" href="#welcome-to-oc-lettings-s-documentation" title="Permalink to this heading">¶</a></h1>
 <div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Table of Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technologies.html">Technologies and Programming Languages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_structure.html">Database Structure and Data Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment</a></li>
+</ul>
 </div>
-</section>
-<section id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h1>
-<p>OC-Lettings is a property management application.
-The application aims to simplify property management and make the process more efficient for property owners and managers.</p>
-</section>
-<section id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h1>
-<p>To install OC-Lettings, follow the steps below:</p>
-<ol class="arabic">
-<li><p><strong>Clone the repository</strong>:</p>
-<p>Clone the project from the GitHub repository:
-<code class="docutils literal notranslate"><span class="pre">`bash</span>
-<span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/alinacharon/Python-OC-Lettings-FR.git</span>
-<span class="pre">`</span></code></p>
-</li>
-<li><p><strong>Create a virtual environment</strong>:
-<code class="docutils literal notranslate"><span class="pre">`bash</span>
-<span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">venv</span>
-<span class="pre">source</span> <span class="pre">venv/bin/activate</span>&#160; <span class="pre">#</span> <span class="pre">On</span> <span class="pre">Windows:</span> <span class="pre">venv\Scripts\activate</span>
-<span class="pre">`</span></code></p></li>
-<li><p><strong>Install dependencies</strong>:
-<code class="docutils literal notranslate"><span class="pre">`bash</span>
-<span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span>
-<span class="pre">`</span></code></p></li>
-<li><p><strong>Configure the database</strong>:
-Update the database:
-<code class="docutils literal notranslate"><span class="pre">`bash</span>
-<span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">migrate</span>
-<span class="pre">`</span></code></p></li>
-<li><p><strong>Start the development server</strong>:
-To start the local server:
-<code class="docutils literal notranslate"><span class="pre">`bash</span>
-<span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">runserver</span>
-<span class="pre">`</span></code></p></li>
-<li><p><strong>Deployment on Render</strong>:</p>
-<p>OC-Lettings is deployed on the Render platform for online access. If you need to update the deployment, follow these steps:
-1. <strong>Render Account</strong>: Ensure you have an account on Render.
-2. <strong>Update Service</strong>: In your Render dashboard, navigate to your existing web service.
-3. <strong>Environment Variables</strong>: Verify that any necessary environment variables, such as <cite>SENTRY_DSN</cite>, are correctly set in the Render dashboard under the “Environment” section.
-4. <strong>Trigger Redeploy</strong>: If you push changes to your GitHub repository, Render will not automatically rebuild and redeploy your application. You should do it mannually.</p>
-</li>
-<li><p><strong>CI Pipeline with GitHub Actions</strong>:</p>
-<p>A CI Pipeline is set up using GitHub Actions. You can find the configuration in the <cite>.github/workflows/ci.yml</cite> file. This pipeline includes steps for linting, testing, building, and deploying the application.</p>
-</li>
-</ol>
-<p>The site is currently accessible at: (<a class="reference external" href="https://python-oc-lettings-fr-o8k3.onrender.com">https://python-oc-lettings-fr-o8k3.onrender.com</a>).</p>
 </section>
 
 
@@ -103,11 +67,22 @@ To start the local server:
 
 
 <h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Table of Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technologies.html">Technologies and Programming Languages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_structure.html">Database Structure and Data Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment</a></li>
+</ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="introduction.html" title="next chapter">Introduction</a></li>
   </ul></li>
 </ul>
 </div>

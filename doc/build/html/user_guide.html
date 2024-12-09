@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>User Guide &#8212; OC-Lettings initial documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Technologies and Programming Languages" href="technologies.html" />
+    <link rel="prev" title="Quick Start Guide" href="quick_start.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="user-guide">
+<h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this heading">¶</a></h1>
+<p><strong>Overview</strong>
+The application is a Django-based web platform for managing property lettings and user profiles. This guide provides detailed information on using the application’s features.</p>
+<p><strong>Key Features</strong></p>
+<p><strong>1. Lettings Management</strong>
+- Browse all property listings
+- View detailed information about specific properties</p>
+<p><strong>2. User Profiles</strong>
+- View list of all user profiles
+- Access individual profile details
+- See user-specific information</p>
+<p><strong>Application Structure</strong></p>
+<p>### Models</p>
+<p><strong>1. Address</strong>
+Represents a physical address with the following attributes:
+- Street number
+- Street name
+- City
+- State (2-letter code)
+- ZIP code
+- Country ISO code</p>
+<p><strong>2. Letting</strong>
+Represents a property listing with:
+- Title
+- Associated address</p>
+<p><strong>3. User Profile</strong>
+- Linked to Django’s built-in User model
+- Optional favorite city field</p>
+<p><strong>Use Cases</strong></p>
+<p><strong>Scenario 1: Browsing Lettings</strong>
+1. Navigate to <cite>/lettings/</cite>
+2. View a list of all available property listings
+3. See basic information for each letting</p>
+<p><strong>Scenario 2: Viewing Specific Letting</strong>
+1. From the listings page, click on a specific property
+2. Navigate to <cite>/lettings/{letting_id}/</cite>
+3. View detailed information about the selected property</p>
+<p><strong>Scenario 3: Exploring User Profiles</strong>
+1. Navigate to <cite>/profiles/</cite>
+2. View a list of all user profiles
+3. Click on a specific username to see detailed profile information</p>
+<p><strong>Scenario 4: Viewing Individual Profile</strong>
+1. From the profiles list, select a specific user
+2. Navigate to <cite>/profiles/{username}/</cite>
+3. View detailed information about the selected user profile</p>
+<p><strong>Profiles Functionality Details</strong></p>
+<p><strong>Profiles Index View</strong>
+- Endpoint: <cite>/profiles/</cite>
+- Displays a comprehensive list of all user profiles
+- Retrieves all Profile objects from the database
+- Renders the list on the ‘profiles/index.html’ template</p>
+<p><strong>Individual Profile View</strong>
+- Endpoint: <cite>/profiles/{username}/</cite>
+- Retrieves profile by username
+- Handles scenarios:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Successful profile retrieval</p></li>
+<li><p>Non-existent profile (404 error)</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>Integrates with Sentry for error tracking</p></li>
+</ul>
+<p><strong>Technical Specifications</strong></p>
+<p><strong>URL Patterns</strong>
+Lettings:
+- <cite>/lettings/</cite> - Listings index
+- <cite>/lettings/{id}/</cite> - Individual letting details</p>
+<p>Profiles:
+- <cite>/profiles/</cite> - Profiles index
+- <cite>/profiles/{username}/</cite> - Individual profile details</p>
+<p><strong>Error Handling</strong>
+- 404 error for non-existent lettings or profiles
+- Sentry integration for error tracking and logging</p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">OC-Lettings</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Table of Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start.html">Quick Start Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technologies.html">Technologies and Programming Languages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_structure.html">Database Structure and Data Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="quick_start.html" title="previous chapter">Quick Start Guide</a></li>
+      <li>Next: <a href="technologies.html" title="next chapter">Technologies and Programming Languages</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2024, Alina Charon.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/user_guide.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
