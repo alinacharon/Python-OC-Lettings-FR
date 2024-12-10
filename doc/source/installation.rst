@@ -5,30 +5,30 @@ To install OC-Lettings, follow the steps below:
 1. **Clone the repository**:
 
    Clone the project from the GitHub repository:
-   ```bash
+   ```
    git clone https://github.com/alinacharon/Python-OC-Lettings-FR.git
    ```
 
 2. **Create a virtual environment**:
-   ```bash
+   ```
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
 3. **Install dependencies**:
-   ```bash
+   ```
    pip install -r requirements.txt
    ```
 
 4. **Configure the database**:
    Update the database:
-   ```bash
+   ```
    python manage.py migrate
    ```
 
 5. **Start the development server**:
    To start the local server:
-   ```bash
+   ```
    python manage.py runserver
    ```
 

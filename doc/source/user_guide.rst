@@ -2,7 +2,8 @@ User Guide
 ============================================
 
 **Overview**
-The application is a Django-based web platform for managing property lettings and user profiles. This guide provides detailed information on using the application's features.
+The application is a Django-based web platform for managing property lettings and user profiles. 
+This guide provides detailed information on using the application's features.
 
 **Key Features**
 
@@ -24,7 +25,7 @@ Represents a physical address with the following attributes:
 - Street number
 - Street name
 - City
-- State (2-letter code)
+- State
 - ZIP code
 - Country ISO code
 
